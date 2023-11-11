@@ -26,10 +26,7 @@
             <p class="card__cvc">000</p>
           </div>
           <div class="card card__front">
-            <div class="card__logo">
-              <div></div>
-              <div></div>
-            </div>
+            <img src="./images/card-logo.svg" alt="" class="card__logo" />
             <p class="card__number">0000 0000 0000 0000</p>
             <div class="card__inner">
               <p class="card__name">Jane Appleseed</p>
@@ -44,7 +41,7 @@
       </div>
       <section class="form-container">
         <h1 class="sr-only">Card Details Form</h1>
-        <form class="form">
+        <form class="form hide">
           <div class="form__fields">
             <div class="form__input-container">
               <label for="cardHolderName" class="form__label">
@@ -132,13 +129,11 @@
           </div>
           <button type="submit" class="btn form__btn">Confirm</button>
         </form>
-        <div class="success hide">
-          <img src="" alt="" class="success__img" />
+        <div class="success">
+          <img src="./images/icon-complete.svg" alt="" class="success__img" />
           <p class="success__text">
-            Thank you!
-            <span class="success__text--highlighted">
-              We've added your card details
-            </span>
+            <span class="success__text--highlighted">Thank you!</span>
+            We've added your card details
           </p>
           <button class="btn success__btn">Continue</button>
         </div>

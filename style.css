@@ -141,17 +141,12 @@ html {
   text-align: center;
   letter-spacing: 1.5px;
   color: var(--white);
-  width: 100%;
-  max-width: 330px;
+  width: 320px;
   padding: 0.8rem;
   background: none;
   background-color: var(--very-dark-violet);
   border: none;
   border-radius: 8px;
-}
-
-.hide {
-  display: none;
 }
 
 body {
@@ -169,6 +164,8 @@ main {
   width: 100%;
 }
 
+/* Card Style */
+
 .cards {
   display: flex;
   flex-direction: column;
@@ -184,12 +181,12 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: min(100%, 330px);
+  width: min(100%, 343px);
 }
 
 .card {
-  width: 288px;
-  aspect-ratio: 3/1.65;
+  width: 283.99px;
+  aspect-ratio: 16/9;
   color: var(--white);
   background-position: center;
   background-repeat: no-repeat;
@@ -199,6 +196,10 @@ main {
 
 .card_forward {
   z-index: 1;
+}
+
+.card_blur {
+  filter: blur(0.3rem);
 }
 
 .card__back {
@@ -217,7 +218,7 @@ main {
 
 .card__front {
   position: absolute;
-  bottom: -56.8%;
+  bottom: -56%;
   align-self: flex-start;
   display: flex;
   flex-direction: column;
@@ -229,23 +230,8 @@ main {
 }
 
 .card__logo {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
+  width: 55px;
   margin-bottom: auto;
-}
-
-.card__logo > div {
-  width: 13px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  border: 1px solid var(--white);
-}
-
-.card__logo > div:first-of-type {
-  width: 30px;
-  background-color: var(--white);
 }
 
 .card__number {
@@ -275,6 +261,10 @@ main {
 .card__date > span:last-of-type {
   margin-left: 1px;
 }
+
+/* Card Style */
+
+/* Form Style */
 
 .form-container {
   display: flex;
@@ -385,4 +375,38 @@ main {
 
 .form__inner .form__input-container:last-child {
   width: 100%;
+}
+
+/* Form Style */
+
+/* Success state Style */
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.success__text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--dark-grayish-violet);
+  margin: 2.2rem 0 3rem;
+}
+
+.success__text--highlighted {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--very-dark-violet);
+  margin-bottom: 0.6rem;
+}
+
+/* Success state Style */
+
+.hide {
+  display: none;
 }
