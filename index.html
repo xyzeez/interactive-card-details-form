@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div aria-hidden="true" class="cards" tabindex="-1">
+        <div class="cards__inner">
+          <div class="card card__back">
+            <p class="card__cvc">000</p>
+          </div>
+          <div class="card card__front">
+            <div class="card__logo">
+              <div></div>
+              <div></div>
+            </div>
+            <p class="card__number">0000 0000 0000 0000</p>
+            <div class="card__inner">
+              <p class="card__name">Jane Appleseed</p>
+              <p class="card__date">
+                <span class="card__month">00</span>/<span class="card__year"
+                  >00</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="form-container">
+        <h1 class="sr-only">Card Details Form</h1>
+        <form class="form">
+          <div class="form__fields">
+            <div class="form__input-container">
+              <label for="cardHolderName" class="form__label">
+                Cardholder Name
+              </label>
+              <input
+                type="text"
+                id="cardHolderName"
+                aria-errormessage="cardHolderNameErrorMessage"
+                placeholder="e.g. Jane Appleseed"
+                class="form__input" />
+              <p
+                id="cardHolderNameErrorMessage"
+                aria-live="polite"
+                class="form__error-message">
+                Field can't be blank
+              </p>
+            </div>
+            <div class="form__input-container">
+              <label for="cardNumber" class="form__label">Card Number</label>
+              <input
+                type="text"
+                id="cardNumber"
+                aria-errormessage="cardNumberErrorMessage"
+                placeholder="e.g. 1234 5678 9123 0000"
+                class="form__input" />
+              <p
+                id="cardNumberErrorMessage"
+                aria-live="polite"
+                class="form__error-message">
+                Wrong format, numbers only
+              </p>
+            </div>
+            <div class="form__inner">
+              <fieldset class="form__input-container form__date-field">
+                <legend class="form__label">
+                  <abbr title="Expiry">Exp.</abbr> Date
+                  <abbr title="Month and Year">(MM/YY)</abbr>
+                </legend>
+                <div class="form__input date-field__form-input">
+                  <div>
+                    <label for="expMonth" class="sr-only">Expiry Month</label>
+                    <input
+                      type="text"
+                      id="expMonth"
+                      aria-errormessage="expDateErrorMessage"
+                      placeholder="MM"
+                      class="form__input" />
+                  </div>
+                  <div>
+                    <label for="expYear" class="sr-only">Expiry Year</label>
+                    <input
+                      type="text"
+                      id="expYear"
+                      aria-errormessage="ErrorMessage"
+                      placeholder="YY"
+                      class="form__input" />
+                  </div>
+                </div>
+                <p
+                  id="expDateErrorMessage"
+                  aria-live="polite"
+                  class="form__error-message">
+                  Cant't be blank
+                </p>
+              </fieldset>
+              <div class="form__input-container">
+                <label for="cvv" class="form__label">
+                  <abbr title="Card Verification Code">CVC</abbr>
+                </label>
+                <input
+                  type="text"
+                  id="cvv"
+                  aria-errormessage="cvvErrorMessage"
+                  placeholder="e.g. 123"
+                  class="form__input" />
+                <p
+                  id="cvvErrorMessage"
+                  aria-live="polite"
+                  class="form__error-message">
+                  Cant't be blank
+                </p>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn form__btn">Confirm</button>
+        </form>
+        <div class="success hide">
+          <img src="" alt="" class="success__img" />
+          <p class="success__text">
+            Thank you!
+            <span class="success__text--highlighted">
+              We've added your card details
+            </span>
+          </p>
+          <button class="btn success__btn">Continue</button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

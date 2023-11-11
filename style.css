@@ -1,0 +1,388 @@
+/*
+  CSS Reset from
+  Josh: https://www.joshwcomeau.com/css/custom-css-reset/
+  Andy-bell: https://andy-bell.co.uk/a-more-modern-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+  cursor: pointer;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+abbr {
+  text-decoration: none;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  margin-inline: 0;
+  padding-inline: 0;
+  padding-block: 0;
+  min-inline-size: auto;
+}
+
+legend {
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding-inline: 0;
+  border: none;
+  line-height: 1;
+}
+/* Reset Ends */
+
+/* Hides screen-reader contents */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Custom properties */
+:root {
+  /* primary colors */
+  --gradient: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  --red: hsl(0, 100%, 66%);
+
+  /* neutral colors */
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+html {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.btn {
+  display: block;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 1.5px;
+  color: var(--white);
+  width: 100%;
+  max-width: 330px;
+  padding: 0.8rem;
+  background: none;
+  background-color: var(--very-dark-violet);
+  border: none;
+  border-radius: 8px;
+}
+
+.hide {
+  display: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  background-color: var(--white);
+}
+
+main {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 0.6fr 1fr;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2.5rem 1rem 3rem;
+  background-image: url(./images/bg-main-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cards__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 330px);
+}
+
+.card {
+  width: 288px;
+  aspect-ratio: 3/1.65;
+  color: var(--white);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 8px;
+}
+
+.card_forward {
+  z-index: 1;
+}
+
+.card__back {
+  position: relative;
+  align-self: flex-end;
+  background-image: url(./images/bg-card-back.png);
+}
+
+.card__cvc {
+  position: absolute;
+  top: 44%;
+  right: 13%;
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+}
+
+.card__front {
+  position: absolute;
+  bottom: -56.8%;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 0.7rem;
+  padding: 1.2rem 1rem;
+  background-image: url(./images/bg-card-front.png);
+}
+
+.card__logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: auto;
+}
+
+.card__logo > div {
+  width: 13px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+}
+
+.card__logo > div:first-of-type {
+  width: 30px;
+  background-color: var(--white);
+}
+
+.card__number {
+  font-size: 1.18rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.card__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.card__name {
+  font-size: 0.53rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.card__date {
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+}
+
+.card__date > span:last-of-type {
+  margin-left: 1px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 1.5rem 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 330px);
+  gap: 2rem;
+}
+
+.form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.form__input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form__input-container:has(.form__input[aria-invalid='true']) {
+  padding-bottom: 1.3rem;
+}
+
+.form__label {
+  width: fit-content;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--very-dark-violet);
+}
+
+.form__input {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0px;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background: none;
+  border: 1px solid var(--light-grayish-violet);
+  outline: none;
+  border-radius: 8px;
+}
+
+.form__input::placeholder {
+  font-weight: 500;
+  color: var(--dark-grayish-violet);
+  opacity: 0.7;
+}
+
+.form__input:is(:focus-visible) {
+  background: linear-gradient(white, white) padding-box,
+    var(--gradient) border-box;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  border-image-source: var(--gradient);
+}
+
+.form__input[aria-invalid='true'] {
+  border: 1px solid var(--red);
+}
+
+.form__input[aria-invalid='true'] + .form__error-message {
+  display: block;
+}
+
+.form__error-message {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  font-size: 0.75rem;
+  color: var(--red);
+}
+
+.form__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.form__date-field {
+  width: 100%;
+}
+
+.date-field__form-input {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.form__inner .form__input-container:last-child {
+  width: 100%;
+}
