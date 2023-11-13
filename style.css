@@ -196,6 +196,7 @@ main {
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 8px;
+  transition: all 0.3s ease-in;
 }
 
 .card_forward {
@@ -317,6 +318,7 @@ main {
   border: 1px solid var(--light-grayish-violet);
   outline: none;
   border-radius: 8px;
+  transition: all 0.3s ease-in;
 }
 
 .form__input::placeholder {
@@ -329,7 +331,7 @@ main {
   background: linear-gradient(white, white) padding-box,
     var(--primary-gradient) border-box;
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid hsla(278, 94%, 30%, 0.5);
   border-image-source: var(--primary-gradient);
 }
 
@@ -347,6 +349,7 @@ main {
   bottom: 0;
   font-size: 0.75em;
   color: var(--primary-red);
+  animation: fade-in 0.3s ease-in;
 }
 
 .form__inner {
@@ -428,6 +431,7 @@ main {
     align-items: flex-end;
     padding-right: 0;
     margin-right: 2rem;
+    background-image: url(./images/bg-main-desktop.png);
   }
 
   .cards__inner {
@@ -444,6 +448,7 @@ main {
     position: absolute;
     bottom: 0;
     right: -45%;
+    box-shadow: var(--card-shadow);
   }
 
   .card__front {
@@ -511,4 +516,11 @@ main {
 /* Utility classes */
 .hide {
   display: none;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
 }
