@@ -1,4 +1,4 @@
-// Elements
+//// Elements
 const cards = document.querySelectorAll('.card');
 const cardFront = document.querySelector('#cardFront');
 const cardBack = document.querySelector('#cardBack');
@@ -21,7 +21,7 @@ const cvvInput = document.querySelector('#cvvInput');
 const successState = document.querySelector('.success');
 const successBtn = document.querySelector('#successBtn');
 
-// Variables
+//// Variables
 let formSubmitted = false;
 const nameRegex = /^[A-Za-z]+$/;
 const numberFieldsRegex = /^[0-9]+$/;
@@ -29,7 +29,7 @@ const cardNumberRegex = /^(?!0+$)\d{16}$/;
 const expDateRegex = /^(?!00)[0-9]{2}$/;
 const cvvRegex = /^[0-9]{3}$/;
 
-// Functions
+//// Functions
 // Sets validation error messages for the give input field.
 const setValidationMessages = (input, errorMessage) => {
   const errorMessageID = `#${input.getAttribute('aria-errormessage')}`;
@@ -39,15 +39,15 @@ const setValidationMessages = (input, errorMessage) => {
 // Validates if a field is valid and sets its ARIA attributes accordingly
 const isFieldValid = (field, condition) => {
   field.setAttribute('aria-invalid', !condition);
-  return condition;
 };
 
 // Validates an input field using a regex and displays error messages.
 const isValid = (input, regex, errorMessage) => {
   const value = input.value;
   const condition = regex.test(value);
-  setValidationMessages(input, condition ? '' : errorMessage);
-  return isFieldValid(input, condition);
+  setValidationMessages(input, errorMessage);
+  isFieldValid(input, condition);
+  return condition;
 };
 
 // Monitors the input for the cardholder name and validates it.
@@ -192,7 +192,7 @@ const renderInputs = (field) => {
   }
 };
 
-// Events
+//// Events
 formFields.addEventListener('focusin', (e) => {
   const targetField = e.target;
 

@@ -334,7 +334,7 @@ main {
 }
 
 .form__input[aria-invalid='true'] {
-  border: 1px solid var(--red);
+  border: 1px solid var(--primary-red);
 }
 
 .form__input[aria-invalid='true'] + .form__error-message {
@@ -346,7 +346,7 @@ main {
   position: absolute;
   bottom: 0;
   font-size: 0.75em;
-  color: var(--red);
+  color: var(--primary-red);
 }
 
 .form__inner {
