@@ -23,9 +23,9 @@ const successBtn = document.querySelector('#successBtn');
 
 //// Variables
 let formSubmitted = false;
-const nameRegex = /^[A-Za-z]+$/;
-const numberFieldsRegex = /^[0-9]+$/;
-const cardNumberRegex = /^(?!0+$)\d{16}$/;
+const nameRegex = /^[A-Za-z]+(?: [A-Za-z]+)*$/;
+const numberFieldsRegex = /^(?!0+$)\d(?: ?\d)*$/;
+const cardNumberRegex = /^(?!([0-9])\1+$)(?!(\d ?){3}\d ?$)\d{4}( ?\d{4}){3}$/;
 const expDateRegex = /^(?!00)[0-9]{2}$/;
 const cvvRegex = /^[0-9]{3}$/;
 
