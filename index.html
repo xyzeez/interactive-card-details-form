@@ -22,16 +22,18 @@
     <main>
       <div aria-hidden="true" class="cards" tabindex="-1">
         <div class="cards__inner">
-          <div class="card card__back">
-            <p class="card__cvc">000</p>
+          <div id="cardBack" class="card card__back">
+            <p id="cardCvv" class="card__cvc">000</p>
           </div>
-          <div class="card card__front">
+          <div id="cardFront" class="card card__front card_forward">
             <img src="./images/card-logo.svg" alt="" class="card__logo" />
-            <p class="card__number">0000 0000 0000 0000</p>
+            <p id="cardNumber" class="card__number">0000 0000 0000 0000</p>
             <div class="card__inner">
-              <p class="card__name">Jane Appleseed</p>
+              <p id="cardName" class="card__name">Jane Appleseed</p>
               <p class="card__date">
-                <span class="card__month">00</span>/<span class="card__year"
+                <span id="cardMonth" class="card__month">00</span>/<span
+                  id="cardYear"
+                  class="card__year"
                   >00</span
                 >
               </p>
@@ -41,35 +43,37 @@
       </div>
       <section class="form-container">
         <h1 class="sr-only">Card Details Form</h1>
-        <form class="form">
-          <div class="form__fields">
+        <form id="form" class="form" novalidate>
+          <div id="formFields" class="form__fields">
             <div class="form__input-container">
-              <label for="cardHolderName" class="form__label">
+              <label for="cardNameInput" class="form__label">
                 Cardholder Name
               </label>
               <input
                 type="text"
-                id="cardHolderName"
-                aria-errormessage="cardHolderNameErrorMessage"
+                id="cardNameInput"
+                aria-errormessage="cardNameInputErrorMessage"
                 placeholder="e.g. Jane Appleseed"
                 class="form__input" />
               <p
-                id="cardHolderNameErrorMessage"
+                id="cardNameInputErrorMessage"
                 aria-live="polite"
                 class="form__error-message">
-                Field can't be blank
+                Please enter a valid name
               </p>
             </div>
             <div class="form__input-container">
-              <label for="cardNumber" class="form__label">Card Number</label>
+              <label for="cardNumberInput" class="form__label"
+                >Card Number</label
+              >
               <input
                 type="text"
-                id="cardNumber"
-                aria-errormessage="cardNumberErrorMessage"
+                id="cardNumberInput"
+                aria-errormessage="cardNumberInputErrorMessage"
                 placeholder="e.g. 1234 5678 9123 0000"
                 class="form__input" />
               <p
-                id="cardNumberErrorMessage"
+                id="cardNumberInputErrorMessage"
                 aria-live="polite"
                 class="form__error-message">
                 Wrong format, numbers only
@@ -83,20 +87,24 @@
                 </legend>
                 <div class="form__input date-field__form-input">
                   <div>
-                    <label for="expMonth" class="sr-only">Expiry Month</label>
+                    <label for="expMonthInput" class="sr-only"
+                      >Expiry Month</label
+                    >
                     <input
                       type="text"
-                      id="expMonth"
+                      id="expMonthInput"
                       aria-errormessage="expDateErrorMessage"
                       placeholder="MM"
                       class="form__input" />
                   </div>
                   <div>
-                    <label for="expYear" class="sr-only">Expiry Year</label>
+                    <label for="expYearInput" class="sr-only"
+                      >Expiry Year</label
+                    >
                     <input
                       type="text"
-                      id="expYear"
-                      aria-errormessage="ErrorMessage"
+                      id="expYearInput"
+                      aria-errormessage="expDateErrorMessage"
                       placeholder="YY"
                       class="form__input" />
                   </div>
@@ -109,17 +117,17 @@
                 </p>
               </fieldset>
               <div class="form__input-container">
-                <label for="cvv" class="form__label">
+                <label for="cvvInput" class="form__label">
                   <abbr title="Card Verification Code">CVC</abbr>
                 </label>
                 <input
                   type="text"
-                  id="cvv"
-                  aria-errormessage="cvvErrorMessage"
+                  id="cvvInput"
+                  aria-errormessage="cvvInputErrorMessage"
                   placeholder="e.g. 123"
                   class="form__input" />
                 <p
-                  id="cvvErrorMessage"
+                  id="cvvInputErrorMessage"
                   aria-live="polite"
                   class="form__error-message">
                   Cant't be blank
@@ -127,7 +135,9 @@
               </div>
             </div>
           </div>
-          <button type="submit" class="btn form__btn">Confirm</button>
+          <button type="submit" id="formBtn" class="btn form__btn"
+            >Confirm</button
+          >
         </form>
         <div class="success hide">
           <img src="./images/icon-complete.svg" alt="" class="success__img" />
@@ -135,7 +145,7 @@
             <span class="success__text--highlighted">Thank you!</span>
             We've added your card details
           </p>
-          <button class="btn success__btn">Continue</button>
+          <button id="successBtn" class="btn success__btn">Continue</button>
         </div>
       </section>
     </main>
