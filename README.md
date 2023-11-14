@@ -38,7 +38,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [URL here](https://www.frontendmentor.io/solutions/interactive-card-details-form-bem-css-vanillajs-K2olmPPog2)
-- Live Site URL: [URL here](https://interactive-card-details-form-femc.netlify.app/)
+- Live Site URL: [URL here](https://interactive-details-form-femc.netlify.app/)
 
 ## My process
 
